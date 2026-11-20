@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cajero Web · UNI-FIIS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><h1>Cajero Automático Web</h1><p>UNI · FIIS · Escuela de Ingeniería de Software</p></header>
+  <main>
+    <section id="login" class="card">
+      <h2>Iniciar sesión</h2>
+      <label>N.º de cuenta <input id="cuenta" inputmode="numeric" autocomplete="username" value="1001"></label>
+      <label>PIN <input id="pin" type="password" inputmode="numeric" autocomplete="current-password" value="1234"></label>
+      <button id="btn-login">Ingresar</button>
+      <p class="hint">Demo: 1001 Alice/1234 · 1002 Hamza/4321 · 1003 Carlos/1111 · 1004 María/2222 · 1005 Pedro/3333</p>
+      <p id="login-msg" class="msg" role="alert"></p>
+    </section>
+
+    <section id="app" hidden>
+      <div class="card saldo">
+        <div><span class="lbl">Titular</span><strong id="titular"></strong></div>
+        <div><span class="lbl">Saldo disponible</span><strong id="saldo" class="big"></strong></div>
+        <div><span class="lbl">Retirado hoy / límite</span><strong id="limite"></strong></div>
+        <button id="btn-logout" class="sec">Cerrar sesión</button>
+      </div>
+
+      <div class="card">
+        <h2>Operación</h2>
+        <label>Monto (S/) <input id="monto" inputmode="decimal" placeholder="ej. 150 o 150.50"></label>
+        <div class="row">
+          <button id="btn-retiro">Retirar efectivo</button>
+          <button id="btn-abono" class="alt">Abonar efectivo</button>
+        </div>
+        <p id="op-msg" class="msg" role="alert"></p>
+      </div>
+
+      <div class="card">
+        <h2>Historial de transacciones</h2>
+        <div class="tablewrap">
+          <table>
+            <thead><tr><th>ID</th><th>Fecha</th><th>Tipo</th><th>Monto</th><th>Estado</th><th>Saldo</th><th>Detalle</th></tr></thead>
+            <tbody id="hist"></tbody>
+          </table>
+        </div>
+        <button id="btn-json" class="sec">Ver log JSON</button>
+        <pre id="json" hidden></pre>
+      </div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

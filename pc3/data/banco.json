@@ -1,0 +1,114 @@
+{
+  "cuentas": [
+    {
+      "id": "1001",
+      "titular": "Alice",
+      "pin_hash": "1bc5218ee72a75f70d19bdff436b706e4c1f3ea09c2fb0715461c89a6acac61d",
+      "saldo": 634.56,
+      "activa": true,
+      "limite_diario": 1000.00,
+      "retirado_hoy": 0.00,
+      "fecha_retiro": ""
+    },
+    {
+      "id": "1002",
+      "titular": "Hamza",
+      "pin_hash": "3cc3cb0d4547634f124347c8572c9ef82cd394b119e114a152ddd0cb29c478ce",
+      "saldo": 198.76,
+      "activa": true,
+      "limite_diario": 1000.00,
+      "retirado_hoy": 0.00,
+      "fecha_retiro": ""
+    },
+    {
+      "id": "1003",
+      "titular": "Carlos",
+      "pin_hash": "78af882bb25a7dfecc66bb96323cab9aedd9981d5924e4b38cfdbd252f1d4ee8",
+      "saldo": 500.00,
+      "activa": true,
+      "limite_diario": 1000.00,
+      "retirado_hoy": 0.00,
+      "fecha_retiro": ""
+    },
+    {
+      "id": "1004",
+      "titular": "María",
+      "pin_hash": "bc0af359bb69f2dc70c24000598e1eabad9fe7a03823883de2108eea8a64996b",
+      "saldo": 50.00,
+      "activa": true,
+      "limite_diario": 1000.00,
+      "retirado_hoy": 0.00,
+      "fecha_retiro": ""
+    },
+    {
+      "id": "1005",
+      "titular": "Pedro",
+      "pin_hash": "e489f4acf34cf21d5078111bcc496bb58e82d51830d1c903888bd9370823e358",
+      "saldo": 300.00,
+      "activa": true,
+      "limite_diario": 1000.00,
+      "retirado_hoy": 0.00,
+      "fecha_retiro": ""
+    }
+  ],
+  "cajero": {
+    "id": "ATM-001",
+    "efectivo_disponible": 5400.00,
+    "operativo": true,
+    "denominacion_minima": 10.00
+  },
+  "secuencia": 4,
+  "transacciones": [
+    {
+      "id": "TX-000001",
+      "fecha": "2026-11-20T04:59:51Z",
+      "tipo": "RETIRO",
+      "cuenta_id": "1001",
+      "canal": "ATM",
+      "monto": 500.00,
+      "estado": "RECHAZADA",
+      "codigo": "E-SALDO",
+      "mensaje": "Saldo insuficiente. Intente con un monto menor",
+      "saldo_antes": 234.56,
+      "saldo_despues": 234.56
+    },
+    {
+      "id": "TX-000002",
+      "fecha": "2026-11-20T05:00:11Z",
+      "tipo": "RETIRO",
+      "cuenta_id": "1001",
+      "canal": "ATM",
+      "monto": 55.00,
+      "estado": "ERROR",
+      "codigo": "E-DENOM",
+      "mensaje": "El monto 55.00 no es múltiplo de los billetes disponibles (10.00)",
+      "saldo_antes": 234.56,
+      "saldo_despues": 234.56
+    },
+    {
+      "id": "TX-000003",
+      "fecha": "2026-11-20T05:00:24Z",
+      "tipo": "RETIRO",
+      "cuenta_id": "1001",
+      "canal": "ATM",
+      "monto": 2.00,
+      "estado": "ERROR",
+      "codigo": "E-DENOM",
+      "mensaje": "El monto 2.00 no es múltiplo de los billetes disponibles (10.00)",
+      "saldo_antes": 234.56,
+      "saldo_despues": 234.56
+    },
+    {
+      "id": "TX-000004",
+      "fecha": "2026-11-20T05:00:31Z",
+      "tipo": "ABONO",
+      "cuenta_id": "1001",
+      "canal": "ATM",
+      "monto": 400.00,
+      "estado": "EXITOSA",
+      "mensaje": "Operación realizada con éxito",
+      "saldo_antes": 234.56,
+      "saldo_despues": 634.56
+    }
+  ]
+}
